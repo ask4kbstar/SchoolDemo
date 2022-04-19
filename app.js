@@ -7,6 +7,8 @@ var path = require('path');
 
 var app = express();
 
+const hostname = '0.0.0.0';
+
 const route = require("./routes/route");
 
 mongoose.connect('mongodb://localhost:27017/schoolDemo');
@@ -34,5 +36,5 @@ app.get('/',(req, res)=>{
 });
 
 app.listen(port,()=>{
-    console.log('Server started at port:'+port);
+    console.log('Server running at http://'+hostname,+port);
 });
